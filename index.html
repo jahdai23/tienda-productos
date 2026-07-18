@@ -1,33 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Tienda</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin</title>
+  <script src="https://unpkg.com/netlify-cms@^2.16.4/dist/netlify-cms.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>✨ Mi Tienda</h1>
-      <a href="/admin/" class="btn-admin">Admin</a>
-    </div>
-  </header>
-
-  <main class="container">
-    <div id="productos" class="grid-productos">
-      Cargando productos...
-    </div>
-  </main>
-
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>
-    // Cargar productos desde la carpeta /productos
-    fetch('/productos/')
-      .then(() => {
-        // Netlify CMS guarda cada producto como .md
-        // Aquí solo mostramos un mensaje. Luego lo conectamos bien
-      })
-  </script>
 </body>
 </html>
