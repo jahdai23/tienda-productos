@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Tienda</title>
+  <title>✨ Mi Tienda</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,18 +21,23 @@
   </main>
 
   <script>
-    const MI_NUMERO_WHATSAPP = "591XXXXXXXX"; // <-- CAMBIA ESTO POR TU NUMERO
+    const MI_NUMERO_WHATSAPP = "59160843206";
 
     async function cargarProductos() {
       const contenedor = document.getElementById('productos');
       
-      // Por ahora listamos productos manual. Luego conectamos con CMS
       const productos = [
         {
-          title: "Producto Ejemplo 1",
-          precio: 25,
-          imagen: "img/producto1.jpg",
-          body: "Descripción del producto 1"
+          title: "Arroz 5kg",
+          precio: 35,
+          imagen: "img/arroz.jpg",
+          body: "Arroz de primera calidad, bolsa de 5kg"
+        },
+        {
+          title: "Aceite 1L",
+          precio: 18,
+          imagen: "img/aceite.jpg", 
+          body: "Aceite vegetal 100% puro"
         }
       ];
 
@@ -45,7 +50,7 @@
       productos.forEach(p => {
         const mensaje = encodeURIComponent(`Hola! Quiero pedir: ${p.title} - Bs ${p.precio}`);
         contenedor.innerHTML += `
-          <div class="producto">
+          <div class="card">
             <img src="${p.imagen}" alt="${p.title}">
             <h3>${p.title}</h3>
             <p class="precio">Bs. ${p.precio}</p>
