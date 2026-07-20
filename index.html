@@ -43,6 +43,7 @@
       const mensaje = encodeURIComponent(`Hola! Quiero pedir: ${p.title} - Bs ${p.precio}`);
       contenedor.innerHTML += `
         <div class="card">
+        <img src="${p.imagen}" alt="${p.title}">
           <h3>${p.title}</h3>
           <p class="precio">Bs. ${p.precio}</p>
           <p>${p.body}</p>
