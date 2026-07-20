@@ -16,17 +16,14 @@
 
   <main class="container">
     <div id="productos" class="grid-productos">
-      Cargando productos...
+        <div id="productos" class="grid-productos"></div>
     </div>
   </main>
 
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    // Cargar productos desde la carpeta /productos
     fetch('/productos/')
       .then(() => {
-        // Netlify CMS guarda cada producto como .md
-        // Aquí solo mostramos un mensaje. Luego lo conectamos bien
       })
   </script>
 </body>
