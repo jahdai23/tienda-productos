@@ -19,9 +19,10 @@ header {
   margin-bottom: 30px;
 }
 
+header .container { display: flex; justify-content: space-between; align-items: center; }
 header h1 { font-size: 28px; }
+
 .btn-admin {
-  float: right;
   background: white;
   color: #7c3aed;
   padding: 8px 16px;
@@ -42,20 +43,32 @@ header h1 { font-size: 28px; }
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: 0.2s;
+  text-align: center;
 }
 .card:hover { transform: translateY(-5px); }
-.card img { width: 100%; border-radius: 8px; }
+.card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
 .card h3 { margin: 10px 0; color: #7c3aed; }
-.card .precio { font-size: 20px; font-weight: bold; color: #10b981; }
+.card .precio { font-size: 20px; font-weight: bold; color: #10b981; margin-bottom: 10px; }
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5b;
+  transform: scale(1.03);
+}
 
 .btn-volver {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-.detalle {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
 }
