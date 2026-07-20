@@ -59,3 +59,26 @@ header h1 { font-size: 28px; }
   padding: 30px;
   border-radius: 12px;
 }
+.btn-whatsapp {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  transition: 0.2s;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5b;
+  transform: scale(1.03);
+}
+
+header .container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
