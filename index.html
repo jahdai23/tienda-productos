@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Tienda</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
@@ -15,16 +15,43 @@
   </header>
 
   <main class="container">
-    <div id="productos" class="grid-productos">
-        <div id="productos" class="grid-productos"></div>
-    </div>
+    <div id="productos" class="grid-productos"></div>
   </main>
 
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    fetch('/productos/')
-      .then(() => {
-      })
+    const MI_NUMERO_WHATSAPP = "59160843206";
+
+    // PRODUCTOS DE PRUEBA. BORRA ESTO CUANDO CONECTEMOS EL CMS
+    const productos = [
+      {
+        title: "Arroz 5kg",
+        precio: 35,
+        imagen: "",
+        body: "Arroz de primera calidad, bolsa de 5kg"
+      },
+      {
+        title: "Aceite 1L",
+        precio: 18,
+        imagen: "",
+        body: "Aceite vegetal 100% puro"
+      }
+    ];
+
+    const contenedor = document.getElementById('productos');
+    
+    productos.forEach(p => {
+      const mensaje = encodeURIComponent(`Hola! Quiero pedir: ${p.title} - Bs ${p.precio}`);
+      contenedor.innerHTML += `
+        <div class="card">
+          <h3>${p.title}</h3>
+          <p class="precio">Bs. ${p.precio}</p>
+          <p>${p.body}</p>
+          <a href="https://wa.me/${MI_NUMERO_WHATSAPP}?text=${mensaje}" target="_blank" class="btn-whatsapp">
+            Pedir por WhatsApp
+          </a>
+        </div>
+      `;
+    });
   </script>
 </body>
 </html>
