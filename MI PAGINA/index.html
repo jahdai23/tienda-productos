@@ -20,14 +20,45 @@
     </div>
   </main>
 
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    // Cargar productos desde la carpeta /productos
-    fetch('/productos/')
-      .then(() => {
-        // Netlify CMS guarda cada producto como .md
-        // Aquí solo mostramos un mensaje. Luego lo conectamos bien
-      })
+    const MI_NUMERO_WHATSAPP = "591XXXXXXXX"; // <-- CAMBIA ESTO POR TU NUMERO
+
+    async function cargarProductos() {
+      const contenedor = document.getElementById('productos');
+      
+      // Por ahora listamos productos manual. Luego conectamos con CMS
+      const productos = [
+        {
+          title: "Producto Ejemplo 1",
+          precio: 25,
+          imagen: "img/producto1.jpg",
+          body: "Descripción del producto 1"
+        }
+      ];
+
+      if(productos.length === 0){
+        contenedor.innerHTML = "<p>Aún no hay productos. Agrégalos desde /admin</p>";
+        return;
+      }
+
+      contenedor.innerHTML = '';
+      productos.forEach(p => {
+        const mensaje = encodeURIComponent(`Hola! Quiero pedir: ${p.title} - Bs ${p.precio}`);
+        contenedor.innerHTML += `
+          <div class="producto">
+            <img src="${p.imagen}" alt="${p.title}">
+            <h3>${p.title}</h3>
+            <p class="precio">Bs. ${p.precio}</p>
+            <p>${p.body}</p>
+            <a href="https://wa.me/${MI_NUMERO_WHATSAPP}?text=${mensaje}" target="_blank" class="btn-whatsapp">
+              Pedir por WhatsApp
+            </a>
+          </div>
+        `;
+      });
+    }
+
+    cargarProductos();
   </script>
 </body>
 </html>
